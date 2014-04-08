@@ -1,0 +1,9 @@
+This is a short help for StraightCompass.<br>
+<br>
+The internal e-compass indicates the direction of your device's top according to the earth's magnetic field, when held flat.<br>
+<br>
+This compass possibly must be recalibrated after the device has changed its position in 3D-world (e. g. has changed from flat to upright position and back again).<br>
+<br>
+You should also bear in mind, that things made of iron or electric cables (magnetic induction - remember your physics at school) including the device's charging cable, can affect the compass's orientation.<br>
+<br>
+To calibrate the compass just bring your device in a flat position and perform a "figure 8 pattern": swing your device around your wrist performing two loops, one clockwise and the second counter clockwise (describing an eight).
