@@ -94,7 +94,7 @@ public class MainActivity extends Activity implements SensorEventListener {
 	public void onSensorChanged(SensorEvent event) {
 
 		// get the angle around the z-axis rotated (relative to 0 degrees)
-		float degree = Math.round(event.values[0]);
+		float degree = Math.round(event.values[0]) % 360;
 
 		// get the sectors around the 8 main directions
 		int currentSector = (int) (-currentDegree / (360f / 16f));
@@ -109,16 +109,16 @@ public class MainActivity extends Activity implements SensorEventListener {
 		else if (sector == 11 || sector == 12) direction = "W";
 		else if (sector == 13 || sector == 14) direction = "NW";
 
-		tvHeading.setText(((int)degree) + "° " + direction);
+		tvHeading.setText(((int)degree) + "Â° " + direction);
 
 		// create a rotation animation (reverse turn degree degrees)
 
-		if (direction == "N")
+		if (sector >= 14 || sector <= 1)
 			// check possible zero-crossing
-			if (currentSector == 15 && sector == 0)
+			if (currentSector >= 14 && sector <= 1)
 				// crossing with the needle from W to E rotate image counter clockwise
 				degree = 360f + degree;
-			else if (currentSector == 0 && sector == 15)
+			else if (currentSector <= 1 && sector >= 14)
 				// crossing with the needle from E to W rotate image clockwise
 				currentDegree = -360f - currentDegree;
 		RotateAnimation ra = new RotateAnimation(
