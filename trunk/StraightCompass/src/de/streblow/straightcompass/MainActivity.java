@@ -109,7 +109,7 @@ public class MainActivity extends Activity implements SensorEventListener {
 		else if (sector == 11 || sector == 12) direction = "W";
 		else if (sector == 13 || sector == 14) direction = "NW";
 
-		tvHeading.setText(((int)degree) + "° " + direction);
+		tvHeading.setText(((int)degree) + String.valueOf(Character.toChars(176)) + " " + direction);
 
 		// create a rotation animation (reverse turn degree degrees)
 
